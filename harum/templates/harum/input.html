@@ -1,0 +1,113 @@
+<!-- secara default akan memanggil semua yg ada di base sebagai kerangka dasar -->
+{% extends 'base.html' %}
+<!-- kemudian jika ada block baru di halaman ini, bertujuan untuk overlap konten yang ada di base, jd index tempat untuk menimpa dari halaman base -->
+
+
+{% block content %}
+<br>
+<br>
+<br>
+<div class="container">
+  <br>
+  <div class="row col-md-2"><button class="btn btn-success"><a style="color: aliceblue; text-decoration:none;"
+        href="/harum/">Back to list DPT</a></button></div>
+  <br>
+  <div class="row">
+    <h2>
+      Data Pemilih Tetap Harum Center
+    </h2>
+  </div>
+  <hr>
+  <br>
+  <div class="row">
+    {% if pesan%}
+    <div class="alert alert-info">{{ pesan }}</div>
+    {% endif %}
+
+    <div class="col-md-4">
+      <form action="" method="post">
+        {% csrf_token %}
+        Nama DPT :
+        {{ form.nama_dpt }}
+        <br>
+        NIK :
+        {{ form.nik }}
+        <br>
+        Nomor Kartu Keluarga :
+        {{ form.nomor_kk }}
+        <br>
+        Alamat Lengkap :
+        {{ form.alamat }}
+        <br>
+        Kota / Kabupaten :
+        {{ form.kota }}
+        <br>
+        Kecamatan :
+        {{ form.kecamatan }}
+        <br>
+        Kelurahan :
+        {{ form.kelurahan }}
+        <br>
+        RT :
+        {{ form.rt }}
+        <br>
+    </div>
+    <div class="col-md-4">
+      Tanggal Lahir :
+      {{ form.tanggal_lahir}}
+      <br>
+      Nomor HP :
+      {{ form.nomor_hp }}
+      <br>
+      Nomor Rekening :
+      {{ form.nomor_rekening}}
+      <br>
+      Bank :
+      {{ form.bank}}
+      <br>
+      Nama Pemilik Rekening :
+      {{ form.nama_pemilik_rekening}}
+      <br>
+      Keterangan Tambahan:
+      {{ form.keterangan}}
+      <br>
+      Penginput / Inputer :
+      {{ form.inputer}}
+      <br>
+      Tanggal Input Data :
+      {{ form.tanggal_input_data}}
+      <br>
+    </div>
+    <div class="col-md-4">
+      Status Telespocheck :
+      {{ form.status_telespocheck}}
+      <br>
+      Tanggal Telespocheck :
+      {{ form.tanggal_telespocheck}}
+      <br>
+      Hasil telespocheck :
+      {{ form.hasil_telespocheck}}
+      <br>
+      Keterangan Tambahan Hasil Telespocheck :
+      {{ form.keterangan}}
+      <br>
+      Penelpon / Telespochecker :
+      {{ form.telespochecker}}
+      <br>
+      Tanggal Honor :
+      {{ form.tanggal_honor}}
+      <br>
+      Nominal Honor :
+      {{ form.nominal_honor}}
+      <br>
+      Keterangan Honor :
+      {{ form.keterangan_honor}}
+      <br>
+      <button class="col-4 offset-8 btn btn-primary">Selesai Input</button>
+      </form>
+    </div>
+    <br>
+  </div>
+</div>
+
+{% endblock content %}

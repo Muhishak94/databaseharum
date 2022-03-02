@@ -1,0 +1,39 @@
+<!-- secara default akan memanggil semua yg ada di base sebagai kerangka dasar -->
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- kemudian jika ada block baru di halaman ini, bertujuan untuk overlap konten yang ada di base, jd index tempat untuk menimpa dari halaman base -->
+{% block content %}
+<img style="margin-top: 50px;" src="{% static 'img/harumnew.png' %} " alt="">
+<img style="height: 500px; margin-top: 50px;" src="{% static 'img/dprharum.png' %} " alt="">
+</div>
+<div class="container shadow">
+  <h1>
+    {{heading}}
+  </h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, delectus fugiat quidem eum quos modi eos magnam
+    consequatur. Debitis vitae ipsum quidem reiciendis rerum aperiam autem ullam repellat dolore voluptas!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae hic reiciendis voluptates aperiam deserunt
+    magni minus cumque accusantium quae cum consequatur odit, suscipit unde nulla eius dolorem. Sapiente, odit
+    necessitatibus.</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, delectus fugiat quidem eum quos modi eos magnam
+    consequatur. Debitis vitae ipsum quidem reiciendis rerum aperiam autem ullam repellat dolore voluptas!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae hic reiciendis voluptates aperiam deserunt
+    magni minus cumque accusantium quae cum consequatur odit, suscipit unde nulla eius dolorem. Sapiente, odit
+    necessitatibus.</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, delectus fugiat quidem eum quos modi eos magnam
+    consequatur. Debitis vitae ipsum quidem reiciendis rerum aperiam autem ullam repellat dolore voluptas!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae hic reiciendis voluptates aperiam deserunt
+    magni minus cumque accusantium quae cum consequatur odit, suscipit unde nulla eius dolorem. Sapiente, odit
+    necessitatibus.</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, delectus fugiat quidem eum quos modi eos magnam
+    consequatur. Debitis vitae ipsum quidem reiciendis rerum aperiam autem ullam repellat dolore voluptas!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae hic reiciendis voluptates aperiam deserunt
+    magni minus cumque accusantium quae cum consequatur odit, suscipit unde nulla eius dolorem. Sapiente, odit
+    necessitatibus.</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, delectus fugiat quidem eum quos modi eos magnam
+    consequatur. Debitis vitae ipsum quidem reiciendis rerum aperiam autem ullam repellat dolore voluptas!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae hic reiciendis voluptates aperiam deserunt
+    magni minus cumque accusantium quae cum consequatur odit, suscipit unde nulla eius dolorem. Sapiente, odit
+    necessitatibus.</p>
+  {% endblock content %}

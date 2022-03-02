@@ -1,0 +1,113 @@
+<!-- secara default akan memanggil semua yg ada di base sebagai kerangka dasar -->
+{% extends 'base.html' %}
+<!-- kemudian jika ada block baru di halaman ini, bertujuan untuk overlap konten yang ada di base, jd index tempat untuk menimpa dari halaman base -->
+
+
+{% block content %}
+<br>
+<br>
+<br>
+<div class="container">
+  <br>
+  <div class="row col-md-2"><button class="btn btn-success"><a style="color: aliceblue; text-decoration:none;"
+        href="/harum/">Back to list DPT</a></button></div>
+  <br>
+  <div class="row">
+    <h2>
+      <h3> UPDATE Database: {{ databases.nama_dpt }}</h3>
+    </h2>
+  </div>
+  <hr>
+  <br>
+  <div class="row">
+    {% if pesan%}
+    <div class="alert alert-success">{{ pesan }}</div>
+    {% endif %}
+
+    <div class="col-md-4">
+      <form action="" method="post">
+        {% csrf_token %}
+        Nama DPT :
+        {{ databases.nama_dpt }}
+        <br>
+        NIK :
+        {{ databases.nik }}
+        <br>
+        Nomor Kartu Keluarga :
+        {{ databases.nomor_kk }}
+        <br>
+        Alamat Lengkap :
+        {{ databases.alamat }}
+        <br>
+        Kota / Kabupaten :
+        {{ databases.kota }}
+        <br>
+        Kecamatan :
+        {{ databases.kecamatan }}
+        <br>
+        Kelurahan :
+        {{ databases.kelurahan }}
+        <br>
+        RT :
+        {{ databases.rt }}
+        <br>
+    </div>
+    <div class="col-md-4">
+      Tanggal Lahir :
+      {{ databases.tanggal_lahir}}
+      <br>
+      Nomor HP :
+      {{ databases.nomor_hp }}
+      <br>
+      Nomor Rekening :
+      {{ databases.nomor_rekening}}
+      <br>
+      Bank :
+      {{ databases.bank}}
+      <br>
+      Nama Pemilik Rekening :
+      {{ databases.nama_pemilik_rekening}}
+      <br>
+      Keterangan Tambahan:
+      {{ databases.keterangan}}
+      <br>
+      Penginput / Inputer :
+      {{ databases.inputer}}
+      <br>
+      Tanggal Input Data :
+      {{ databases.tanggal_input_data}}
+      <br>
+    </div>
+    <div class="col-md-4">
+      Status Telespocheck :
+      {{ databases.status_telespocheck}}
+      <br>
+      Tanggal Telespocheck :
+      {{ databases.tanggal_telespocheck}}
+      <br>
+      Hasil telespocheck :
+      {{ databases.hasil_telespocheck}}
+      <br>
+      Keterangan Tambahan Hasil Telespocheck :
+      {{ databases.keterangan}}
+      <br>
+      Penelpon / Telespochecker :
+      {{ databases.telespochecker}}
+      <br>
+      Tanggal Honor :
+      {{ databases.tanggal_honor}}
+      <br>
+      Nominal Honor :
+      {{ databases.nominal_honor}}
+      <br>
+      Keterangan Honor :
+      {{ databases.keterangan_honor}}
+      <br>
+      <button class="col-4 offset-8 btn btn-success">Update Selesai</button>
+      </form>
+    </div>
+    <br>
+  </div>
+</div>
+
+{% endblock content %}

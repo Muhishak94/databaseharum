@@ -1,0 +1,77 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title>Harum Center</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="{% static 'vendor/bootstrap/bootstrap.min.css' %}">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+
+<body class="text-center" style="background-color: rgb(255, 196, 0);">
+  <div class="form-signin">
+    <img class="mb-4" src="{% static 'img/loginnew.png' %}" alt="" width="300" height="250">
+    <h1 class="h3 mb-3 fw-normal">Selamat Datang</h1>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    <div class="card-header bg-dark">
+      <h6 class="text-white mt-2">
+        LOGIN
+      </h6>
+    </div>
+    <form action="" method="post">
+      {% csrf_token %}
+      <form action="">
+        <div class="form-floating">
+          <input type="text" class="form-control" name="username" placeholder="name@example.com">
+          <label for="floatingInput">Username</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" name="password" placeholder="Password">
+          <label for="floatingPassword">Password</label>
+        </div>
+
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+      </form>
+    </form>
+  </div>
+</body>
+
+</html>

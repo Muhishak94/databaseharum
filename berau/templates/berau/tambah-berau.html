@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+  <h2>
+    Data Pemilih Tetap Harum Center
+  </h2>
+  <br>
+  <div class="row col-md-2"><button class="btn btn-primary"><a style="color: aliceblue; text-decoration:none;"
+        href="{% url 'berau' %}"><i style="font-size: 22px;" class="bi bi-arrow-left-square"> </i> Back to list
+        DPT</a></button></div>
+  <div class="row">
+    <div>
+      <br>
+    </div>
+    {% if pesan %}
+    <div class="alert alert-success text-center">{{ pesan }}</div>
+    {% endif %}
+    {% if error %}
+    <div class="alert alert-danger text-center">{{ error }}</div>
+    {% endif %}
+    <h4 class="text-center">
+      INPUT DATA BARU
+    </h4>
+    <hr>
+    <div class="col-md-4">
+
+
+      <form action="{% url 'tambah_berau' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        Nama DPT : <span class="text-danger">*</span>
+        {{ form.nama_dpt }}
+        <br>
+        NIK :<span class="text-danger">*</span>
+        {{ form.nik }}
+        <br>
+        Nomor Kartu Keluarga : <span class="text-danger">*</span>
+        {{ form.nomor_kk }}
+        <br>
+        Alamat Lengkap :
+        {{ form.alamat }}
+        <br>
+        Kota / Kabupaten : <span class="text-danger">*</span>
+        {{ form.kota }}
+        <br>
+        Kecamatan : <span class="text-danger">*</span>
+        {{ form.kecamatan }}
+        <br>
+        Kelurahan : <span class="text-danger">*</span>
+        {{ form.kelurahan }}
+        <br>
+        RT :
+        {{ form.rt }}
+        <br>
+    </div>
+    <div class="col-md-4">
+      Tanggal Lahir :
+      {{ form.tanggal_lahir}}
+      <br>
+      Nomor HP :
+      {{ form.nomor_hp }}
+      <br>
+      Nomor Rekening :
+      {{ form.nomor_rekening}}
+      <br>
+      Bank :
+      {{ form.bank}}
+      <br>
+      Nama Pemilik Rekening :
+      {{ form.nama_pemilik_rekening}}
+      <br>
+      Keterangan Tambahan:
+      {{ form.keterangan}}
+      <br>
+      Penginput / Inputer :
+      {{ form.inputer}}
+      <br>
+      Tanggal Input Data :
+      {{ form.tanggal_input_data}}
+      <br>
+    </div>
+    <div class="col-md-4">
+      Status Telespocheck :
+      {{ form.status_telespocheck}}
+      <br>
+      Tanggal Telespocheck :
+      {{ form.tanggal_telespocheck}}
+      <br>
+      Hasil telespocheck :
+      {{ form.hasil_telespocheck}}
+      <br>
+      Keterangan Tambahan Hasil Telespocheck :
+      {{ form.keterangan}}
+      <br>
+      Penelpon / Telespochecker :
+      {{ form.telespochecker}}
+      <br>
+      Tanggal Honor :
+      {{ form.tanggal_honor}}
+      <br>
+      Nominal Honor :
+      {{ form.nominal_honor}}
+      <br>
+      Keterangan Honor :
+      {{ form.keterangan_honor}}
+      <br>
+
+      <button class="col-md-5 btn btn-primary">Input Data</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

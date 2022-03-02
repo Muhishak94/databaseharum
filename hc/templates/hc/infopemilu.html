@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="{% static 'vendor/bootstrap/bootstrap.css' %}">
+  <script src="{% static 'vendor/bootstrap/bootstrap.min.js' %}"></script>
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <!-- untuk icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <!-- untuk Data Tabel -->
+  <link rel="stylesheet" href="{% static 'DataTables/DataTables-1.11.4/css/jquery.dataTables.css' %}">
+  <script src="{% static 'DataTables/DataTables-1.11.4/js/jquery.dataTables.js' %}"></script>
+  <!-- untuk chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+</head>
+
+<body>
+  {% include "snippets/navbar.html" %}
+  <div class="container">
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <h6 class="text-center"> Hitung Mundur Waktu Pemilu ( Tanggal default 27 April 2024 )</h6>
+    <p class="bg-warning rounded-pill" style="  text-align: center;
+  font-size: 30px;
+  margin-top: 0px;" id="demo"></p>
+  </div>
+
+  <script>
+    // Tetapkan tanggal kita menghitung mundur
+    var countDownDate = new Date("February 14, 2024 10:00:20").getTime();
+
+    // Perbarui hitungan mundur setiap 1 detik
+    var x = setInterval(function () {
+
+      // Dapatkan tanggal dan waktu hari ini
+      var now = new Date().getTime();
+
+      // Temukan jarak antara sekarang dan tanggal hitung mundur
+      var distance = countDownDate - now;
+
+      // Perhitungan waktu untuk hari, jam, menit dan detik
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Keluarkan hasil dalam elemen dengan id = "demo"
+      document.getElementById("demo").innerHTML = days + " Hari - " + hours + " jam - "
+        + minutes + " menit - " + seconds + " detik.";
+
+      //Jika hitungan mundur selesai, tulis beberapa teks
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+  </script>
+
+  {% include "snippets/footer.html" %}
+  {% include "snippets/scripts.html" %}
+  <!-- <script>
+    $(document).ready(function () {
+      $('#bootstrapdatatable').DataTable({
+        "aLengthMenu": [[3, 5, 10, 25, -1], [3, 5, 10, 25, "All"]],
+        "iDisplayLength": 3
+      }
+      );
+    });
+  </script> -->
+</body>
+
+</html>
